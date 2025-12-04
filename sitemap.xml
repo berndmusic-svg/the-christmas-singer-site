@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://dekerstzanger.nl/</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Main Sections -->
+    <url>
+        <loc>https://dekerstzanger.nl/#hero</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://dekerstzanger.nl/#packages</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://dekerstzanger.nl/#video</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://dekerstzanger.nl/#about</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://dekerstzanger.nl/#repertoire</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://dekerstzanger.nl/#photos</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://dekerstzanger.nl/#testimonials</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://dekerstzanger.nl/#contact</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Individual Package Pages (for better SEO) -->
+    <url>
+        <loc>https://dekerstzanger.nl/#packages-basis</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://dekerstzanger.nl/#packages-premium</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://dekerstzanger.nl/#packages-deluxe</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Repertoire Categories -->
+    <url>
+        <loc>https://dekerstzanger.nl/#repertoire-klassiek</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://dekerstzanger.nl/#repertoire-modern</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://dekerstzanger.nl/#repertoire-internationaal</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Special Landing Pages for SEO -->
+    <url>
+        <loc>https://dekerstzanger.nl/#kerstzanger-bedrijfsfeest</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://dekerstzanger.nl/#christmas-singer-nederland</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://dekerstzanger.nl/#kerstentertainment-2025</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+</urlset>
