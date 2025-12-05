@@ -1583,15 +1583,41 @@ section:nth-child(even) {
     background: linear-gradient(45deg, rgba(139, 21, 56, 0.1), rgba(212, 175, 55, 0.1));
 }
 
-/* Agenda Section */
+/* Agenda Section - V2 - Enhanced Visuals */
 .agenda2 {
-    background: var(--white);
+    background: linear-gradient(175deg, #fdfbfb 0%, #ebedee 100%);
     padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.agenda2::before {
+    content: '🎄';
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 10rem;
+    color: var(--forest-green);
+    opacity: 0.05;
+    transform: rotate(-15deg);
+}
+
+.agenda2::after {
+    content: '❄️';
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 10rem;
+    color: var(--gold);
+    opacity: 0.05;
+    transform: rotate(15deg);
 }
 
 .availability-wrapper {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .availability-header {
@@ -1600,19 +1626,20 @@ section:nth-child(even) {
 }
 
 .availability-icon {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
+    color: var(--burgundy);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
 .availability-title {
-    font-size: clamp(2rem, 4vw, 3rem);
     color: var(--charcoal);
     margin-bottom: 1rem;
 }
 
 .availability-subtitle {
     font-size: 1.2rem;
-    color: #666;
+    color: #555;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -1620,116 +1647,163 @@ section:nth-child(even) {
 .availability-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
     margin-bottom: 3rem;
 }
 
 .availability-card {
-    background: var(--white);
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: var(--shadow);
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     text-align: center;
-    transition: var(--transition);
-    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .availability-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.availability-available {
-    border-color: var(--success);
-}
-
-.availability-limited {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
     border-color: var(--gold);
 }
 
-.availability-busy {
-    border-color: #ef4444;
-}
-
 .availability-card-header {
-    margin-bottom: 1.5rem;
+    padding: 2rem 1.5rem;
+    border-bottom: 1px dashed #ddd;
 }
 
 .availability-status-icon {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    line-height: 1;
 }
 
 .availability-month {
-    color: var(--charcoal);
-    margin-bottom: 0.5rem;
+    font-family: var(--font-display);
+    color: var(--burgundy);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
 
 .availability-status {
-    font-size: 0.9rem;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
     display: inline-block;
-}
-
-.availability-available .availability-status {
-    background: rgba(34, 197, 94, 0.2);
-    color: var(--success);
-}
-
-.availability-limited .availability-status {
-    background: rgba(212, 175, 55, 0.2);
-    color: var(--gold);
-}
-
-.availability-busy .availability-status {
-    background: rgba(239, 68, 68, 0.2);
-    color: #ef4444;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .availability-description {
-    margin-bottom: 1.5rem;
+    padding: 1.5rem;
     color: #666;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+.availability-action {
+    padding: 0 2rem 2rem 2rem;
+    margin-top: auto;
 }
 
 .btn-availability {
     display: inline-block;
-    padding: 12px 24px;
-    border-radius: 25px;
+    padding: 14px 28px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition);
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.btn-available {
-    background: var(--success);
-    color: var(--white);
+/* Status: Fully Booked (Oktober, November) */
+.availability-fully-booked .availability-card-header {
+    background: #f1f1f1;
+}
+.availability-fully-booked .availability-status-icon { color: #888; }
+.availability-fully-booked .availability-month { color: #777; }
+.availability-fully-booked .availability-status {
+    background: #e0e0e0;
+    color: #666;
+}
+.availability-fully-booked p { color: #888; }
+.availability-fully-booked .btn-availability {
+    background: #ccc;
+    color: #fff;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+.availability-fully-booked:hover {
+    transform: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border-color: #e0e0e0;
 }
 
-.btn-limited {
-    background: var(--gold);
-    color: var(--charcoal);
+
+/* Status: Limited (December) */
+.availability-busy .availability-status-icon { color: var(--gold-dark); }
+.availability-busy .availability-month { color: var(--burgundy); }
+.availability-busy .availability-status {
+    background: rgba(255, 215, 0, 0.2);
+    color: var(--gold-dark);
 }
+.availability-busy .btn-availability {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--chocolate);
+}
+.availability-busy .btn-availability:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+
+/* Status: Available (Hypothetical for future) */
+.availability-available .availability-status-icon { color: var(--success); }
+.availability-available .availability-month { color: var(--forest-green); }
+.availability-available .availability-status {
+    background: rgba(34, 197, 94, 0.15);
+    color: #15803d;
+}
+.availability-available .btn-availability {
+    background: linear-gradient(135deg, var(--success), #16a34a);
+    color: white;
+}
+.availability-available .btn-availability:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
 
 .availability-note {
     background: linear-gradient(135deg, var(--cream), var(--light-gold));
     border-radius: 20px;
     padding: 2rem;
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+    align-items: center;
+    gap: 1.5rem;
     box-shadow: var(--shadow);
+    border-left: 5px solid var(--gold);
 }
 
 .note-icon {
-    font-size: 2rem;
+    font-size: 2.5rem;
     flex-shrink: 0;
+    color: var(--gold-dark);
 }
 
 .note-content h4 {
     color: var(--burgundy);
     margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+.note-content p {
+    margin-bottom: 0;
+    color: #555;
 }
 
 /* Testimonials Section */
