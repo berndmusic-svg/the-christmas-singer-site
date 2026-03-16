@@ -26,50 +26,48 @@ class ChristmasSingerWebsite {
     }
     
     // Particle System
-    /**
-     * Creëer een bescheidener aantal sfeerdeeltjes voor betere prestaties.
-     * Er worden slechts 10 deeltjes bij het laden gegenereerd en daarna elke 5 seconden één.
-     */
     createParticles() {
-        // Respect reduced motion and very small screens
         try {
             const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             const smallScreen = Math.min(window.innerWidth, window.innerHeight) < 480;
-            if (prefersReduced || smallScreen) {
-                return; // Skip particles entirely
-            }
+            if (prefersReduced || smallScreen) return;
         } catch(e) {}
 
-        const particlesContainer = document.getElementById('particles');
-        const particles = ['❄️', '✨', '⭐', '🎄', '🔔'];
+        const container = document.getElementById('particles');
+        if (!container) return;
 
-        // Maak een kleiner aantal initiële deeltjes aan om het geheugenverbruik te beperken
-        for (let i = 0; i < 10; i++) {
-            this.createParticle(particlesContainer, particles);
+        // Spread 20 particles across the first load with staggered delays
+        for (let i = 0; i < 20; i++) {
+            setTimeout(() => this.createParticle(container), i * 400);
         }
 
-        // Creëer nieuwe deeltjes op een lagere frequentie
-        setInterval(() => {
-            this.createParticle(particlesContainer, particles);
-        }, 5000);
+        // Continuously trickle new particles
+        setInterval(() => this.createParticle(container), 1200);
     }
-    
-    createParticle(container, particles) {
+
+    createParticle(container) {
+        // Shapes: mostly small dots + occasional snowflake/star
+        const shapes = ['\u2022', '\u2022', '\u2022', '\u2022', '\u2744', '\u2744', '\u2726', '\u00b7', '\u00b7'];
+        const sizes  = ['sm', 'sm', 'sm', 'md', 'md', 'lg'];
+
         const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.innerHTML = particles[Math.floor(Math.random() * particles.length)];
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 6 + 's';
-        particle.style.animationDuration = (Math.random() * 3 + 6) + 's';
-        
+        particle.className = 'particle ' + sizes[Math.floor(Math.random() * sizes.length)];
+        particle.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+        particle.style.left = (Math.random() * 100) + '%';
+
+        const duration = (Math.random() * 8 + 7).toFixed(1);          // 7–15s
+        const drift    = ((Math.random() - 0.5) * 80).toFixed(0) + 'px'; // ±40px drift
+        const spin     = (Math.random() * 360).toFixed(0) + 'deg';
+
+        particle.style.setProperty('--drift', drift);
+        particle.style.setProperty('--spin',  spin);
+        particle.style.animationDuration = duration + 's';
+        particle.style.animationDelay    = '0s';
+
         container.appendChild(particle);
-        
-        // Remove particle after animation
-        setTimeout(() => {
-            if (particle.parentNode) {
-                particle.parentNode.removeChild(particle);
-            }
-        }, 9000);
+
+        // Remove after animation completes
+        setTimeout(() => particle.remove(), (parseFloat(duration) + 0.5) * 1000);
     }
     
     // Navigation Setup
