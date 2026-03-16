@@ -5784,3 +5784,12 @@ html {
     .navbar.announce-hidden { top: 0; }
     .hero { padding-top: 130px !important; }
 }
+
+/* ======================================================
+   HERO ACHTERGROND — geforceerde override
+   ====================================================== */
+.hero {
+    background: linear-gradient(rgba(60, 24, 16, 0.72), rgba(107, 16, 40, 0.55)),
+                url('Images/Firefly-20241108230908-png.avif') center center / cover no-repeat !important;
+    position: relative !important;
+}

@@ -65,7 +65,7 @@
     <meta property="og:description" content="Boek Dé Kerstzanger voor uw kerstfeest 2026! Live kerstmuziek voor bedrijfsfeesten en evenementen. 15+ jaar ervaring in heel Nederland.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.dekerstzanger.nl/">
-    <meta property="og:image" content="https://www.dekerstzanger.nl/Images/Kerstzanger_1.png">
+    <meta property="og:image" content="https://www.dekerstzanger.nl/Images/Kerstzanger_1.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="800">
     <meta property="og:image:alt" content="Dé Kerstzanger - Professionele Kerstzanger Bernd van de Sanden">
@@ -76,17 +76,14 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dé Kerstzanger - Professionele Kerstzanger | Boek Nu voor 2026">
     <meta name="twitter:description" content="Boek Dé Kerstzanger voor uw kerstfeest 2026! Live kerstmuziek voor bedrijfsfeesten en evenementen.">
-    <meta name="twitter:image" content="https://www.dekerstzanger.nl/Images/Kerstzanger_1.png">
+    <meta name="twitter:image" content="https://www.dekerstzanger.nl/Images/Kerstzanger_1.webp">
     
     <!-- Additional SEO Meta Tags -->
-    <meta name="geo.region" content="NL">
-    <meta name="geo.placename" content="Nederland">
-    <meta name="geo.position" content="52.3676;4.9041">
-    <meta name="ICBM" content="52.3676, 4.9041">
-    <meta name="language" content="Dutch">
-    <meta name="distribution" content="global">
-    <meta name="rating" content="general">
-    <meta name="revisit-after" content="7 days">
+    <meta name="geo.region" content="NL-NB">
+    <meta name="geo.placename" content="Tilburg, Noord-Brabant">
+    <meta name="geo.position" content="51.5555;5.0913">
+    <meta name="ICBM" content="51.5555, 5.0913">
+    <meta name="theme-color" content="#3c1810">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -121,10 +118,17 @@
         "addressRegion": "Noord-Brabant",
         "addressCountry": "NL"
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Nederland"
-      },
+      "areaServed": [
+        { "@type": "Country", "name": "Nederland" },
+        { "@type": "City", "name": "Tilburg" },
+        { "@type": "City", "name": "Amsterdam" },
+        { "@type": "City", "name": "Rotterdam" },
+        { "@type": "City", "name": "Utrecht" },
+        { "@type": "City", "name": "Eindhoven" },
+        { "@type": "City", "name": "Den Haag" },
+        { "@type": "City", "name": "Breda" },
+        { "@type": "City", "name": "Den Bosch" }
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Kerstpakketten 2026",
@@ -134,21 +138,27 @@
             "name": "Standaard Pakket",
             "description": "2x30 minuten live performance met stageset en sfeerverlichting",
             "price": "595",
-            "priceCurrency": "EUR"
+            "priceCurrency": "EUR",
+            "valueAddedTaxIncluded": false,
+            "url": "https://showbird.com/nl/acts/19031-the-christmas-singer-de-kerstzanger"
           },
           {
             "@type": "Offer",
             "name": "Uitgebreid Pakket",
             "description": "3x30 minuten live performance met uitgebreid repertoire",
             "price": "695",
-            "priceCurrency": "EUR"
+            "priceCurrency": "EUR",
+            "valueAddedTaxIncluded": false,
+            "url": "https://showbird.com/nl/acts/19031-the-christmas-singer-de-kerstzanger"
           },
           {
             "@type": "Offer",
             "name": "Premium Pakket",
             "description": "4x30 minuten live performance met volledig allround repertoire",
             "price": "795",
-            "priceCurrency": "EUR"
+            "priceCurrency": "EUR",
+            "valueAddedTaxIncluded": false,
+            "url": "https://showbird.com/nl/acts/19031-the-christmas-singer-de-kerstzanger"
           }
         ]
       },
@@ -300,7 +310,7 @@
     <!-- Preload Critical Resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style">
     <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="images/hero-image.webp" as="image">
+    <link rel="preload" href="Images/hero-image.webp" as="image" fetchpriority="high">
 
     <style>
     .luxury-booking-section a {
@@ -322,7 +332,6 @@
         <div class="announce-inner">
             <span class="announce-icon">&#9733;</span>
             <p><strong>Early bird:</strong> Boek v&oacute;&oacute;r 1 mei 2026 en ontvang <strong>10% korting</strong> op uw boeking &mdash; <a href="#contact" data-scroll="contact">vraag nu vrijblijvend aan</a></p>
-            <button class="announce-close" onclick="document.getElementById('announce-bar').style.display='none'; document.getElementById('navbar').classList.add('announce-hidden');" aria-label="Sluiten">&times;</button>
         </div>
     </div>
 
@@ -375,7 +384,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="images/hero-image.webp" alt="The Christmas Singer - Bernd van de Sanden, professionele kerstzanger" loading="eager" width="450" height="600">
+                    <img src="Images/hero-image.webp" alt="Dé Kerstzanger Bernd van de Sanden - professionele kerstzanger voor bedrijfsfeesten" loading="eager" width="450" height="600" fetchpriority="high">
                 </div>
             </div>
         </div>
@@ -392,7 +401,10 @@
                 <div class="social-proof-logos">
                     <img src="Images/vdvalk-transparent.png" alt="Van der Valk Hotel" loading="lazy" style="max-height:90px;">
                     <img src="Images/testimonial-logo-2.png" alt="De Wever Tilburg" loading="lazy" width="120" height="50">
-                    <img src="Images/testimonial-logo-1.png" alt="Corporate Events" loading="lazy" width="120" height="50">
+                    <picture>
+                        <source srcset="Images/testimonial-logo-1.webp" type="image/webp">
+                        <img src="Images/testimonial-logo-1.png" alt="Corporate Events" loading="lazy" width="120" height="50">
+                    </picture>
                     <a href="https://showbird.com/nl/acts/19031-the-christmas-singer-de-kerstzanger" target="_blank" rel="noopener noreferrer" aria-label="Bekijk profiel op ShowBird">
                         <img src="Images/showbird-badge.png" alt="Boekbaar via ShowBird" loading="lazy" width="130" height="50">
                     </a>
@@ -444,9 +456,12 @@
             <div class="about-v2-layout">
 
                 <div class="about-v2-image">
-                    <img src="Images/Kerstzanger_2.png"
-                         alt="Bernd van de Sanden - De Kerstzanger - Professionele kerstzanger Nederland"
-                         loading="lazy">
+                    <picture>
+                        <source srcset="Images/Kerstzanger_2.webp" type="image/webp">
+                        <img src="Images/Kerstzanger_2.png"
+                             alt="Bernd van de Sanden - De Kerstzanger - Professionele kerstzanger Nederland"
+                             loading="lazy">
+                    </picture>
                 </div>
 
                 <div class="about-v2-content">
@@ -698,7 +713,10 @@
                     
                     <div class="inclusive-hero-image">
                         <div class="inclusive-image-frame">
-                            <img src="images/inclusive-image.png" alt="The Christmas Singer All-Inclusive Performance" loading="lazy">
+                            <picture>
+                                <source srcset="Images/inclusive-image.webp" type="image/webp">
+                                <img src="Images/inclusive-image.png" alt="Dé Kerstzanger all-inclusive kerstoptreden" loading="lazy">
+                            </picture>
                             <div class="inclusive-image-overlay"></div>
                         </div>
                     </div>
@@ -911,7 +929,10 @@
                 <div class="contact-v2-left">
 
                     <div class="contact-v2-portrait">
-                        <img src="Images/Kerstzanger_4.png" alt="The Christmas Singer – Bernd van de Sanden" loading="lazy">
+                        <picture>
+                            <source srcset="Images/Kerstzanger_4.webp" type="image/webp">
+                            <img src="Images/Kerstzanger_4.png" alt="Dé Kerstzanger – Bernd van de Sanden, professionele kerstzanger" loading="lazy">
+                        </picture>
                     </div>
 
                     <div class="contact-v2-info">
