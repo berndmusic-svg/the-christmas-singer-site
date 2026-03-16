@@ -1,0 +1,76 @@
+# Robots.txt for Dé Kerstzanger - Professional Christmas Entertainment
+# Website: https://dekerstzanger.nl
+# Updated: 2025-01-27
+
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://dekerstzanger.nl/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all important sections
+Allow: /#hero
+Allow: /#packages
+Allow: /#video
+Allow: /#about
+Allow: /#repertoire
+Allow: /#photos
+Allow: /#testimonials
+Allow: /#contact
+
+# Allow package-specific pages
+Allow: /#packages-basis
+Allow: /#packages-premium
+Allow: /#packages-deluxe
+
+# Allow repertoire categories
+Allow: /#repertoire-klassiek
+Allow: /#repertoire-modern
+Allow: /#repertoire-internationaal
+
+# Allow SEO landing pages
+Allow: /#kerstzanger-bedrijfsfeest
+Allow: /#christmas-singer-nederland
+Allow: /#kerstentertainment-2025
+
+# Disallow admin/private areas (if any exist in future)
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /temp/
+
+# Allow CSS, JS, and image files for proper rendering
+Allow: /styles.css
+Allow: /script.js
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.avif$
+Allow: /*.svg$
+
+# Special instructions for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Block bad bots (optional - uncomment if needed)
+# User-agent: BadBot
+# Disallow: /
+
+# Cache instructions for search engines
+# This helps with faster indexing
+Cache-Control: public, max-age=3600

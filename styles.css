@@ -439,6 +439,18 @@ section {
     clear: both;
 }
 
+/* Styles for scroll animation */
+.section-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 section:nth-child(even) {
     background: linear-gradient(135deg, var(--cream) 0%, #F9F7F4 100%);
 }
@@ -875,9 +887,21 @@ section:nth-child(even) {
 
 .packages-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-top: 3rem;
+}
+
+/* Responsive grid for packages */
+@media (max-width: 992px) {
+    .packages-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .package-popular {
+        transform: scale(1); /* Reset popular package scaling on mobile */
+    }
 }
 
 .package-card {
