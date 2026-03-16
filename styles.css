@@ -3410,3 +3410,370 @@ html {
         page-break-inside: avoid;
     }
 }
+
+/* ==============================================
+   FACELIFT 2026 — Nieuwe & bijgewerkte stijlen
+   ============================================== */
+
+/* --- Social Proof Strip --- */
+.social-proof-strip {
+    background: linear-gradient(135deg, var(--chocolate) 0%, var(--burgundy) 100%);
+    border-bottom: 3px solid var(--gold);
+    padding: 1.4rem 0;
+    overflow: hidden;
+}
+
+.social-proof-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+.social-proof-label {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    flex-shrink: 0;
+}
+
+.social-proof-logos {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-proof-logos img {
+    max-height: 44px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.75;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.social-proof-logos a:hover img,
+.social-proof-logos img:hover {
+    opacity: 1;
+    transform: scale(1.06);
+}
+
+.social-proof-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.stat-number {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: var(--font-display);
+    line-height: 1.2;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .social-proof-inner {
+        justify-content: center;
+        text-align: center;
+    }
+    .social-proof-logos {
+        justify-content: center;
+    }
+    .social-proof-stats {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-proof-stats {
+        display: none;
+    }
+}
+
+/* --- Foto Galerij — Native Carrousel --- */
+.gallery-intro-text {
+    text-align: center;
+    font-size: 1.05rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    line-height: 1.75;
+    font-style: italic;
+}
+
+/* Override ALL eerder gedefinieerde .modern-slideshow en .slide stijlen */
+.modern-slideshow {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 960px !important;
+    margin: 0 auto !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    background: #0d0d0d !important;
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.3),
+        0 0 0 2px rgba(212, 175, 55, 0.25) !important;
+    border: 2px solid rgba(212, 175, 55, 0.3) !important;
+    aspect-ratio: 16 / 9 !important;
+    max-height: none !important;
+}
+
+.modern-slideshow .slide {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0 !important;
+    transition: opacity 0.55s ease !important;
+    transform: none !important;
+    z-index: 1 !important;
+}
+
+.modern-slideshow .slide.active {
+    opacity: 1 !important;
+    transform: none !important;
+    z-index: 2 !important;
+}
+
+.modern-slideshow .slide-background {
+    position: absolute !important;
+    inset: 0 !important;
+    background-size: cover !important;
+    background-position: center !important;
+    filter: blur(28px) brightness(0.35) !important;
+    transform: scale(1.18) !important;
+    z-index: 1 !important;
+}
+
+.modern-slideshow .slide-image {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* Navigatieknoppen */
+.slideshow-prev,
+.slideshow-next {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: rgba(0, 0, 0, 0.55) !important;
+    backdrop-filter: blur(8px) !important;
+    border: 1.5px solid rgba(212, 175, 55, 0.45) !important;
+    color: #fff !important;
+    width: 52px !important;
+    height: 52px !important;
+    border-radius: 50% !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    transition: all 0.22s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+}
+
+.slideshow-prev { left: 16px !important; }
+.slideshow-next { right: 16px !important; }
+
+.slideshow-prev:hover,
+.slideshow-next:hover {
+    background: rgba(212, 175, 55, 0.9) !important;
+    color: var(--chocolate) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+    border-color: var(--gold) !important;
+}
+
+/* Teller */
+.modern-slideshow .slideshow-counter {
+    position: absolute !important;
+    top: 14px !important;
+    right: 14px !important;
+    background: rgba(0, 0, 0, 0.65) !important;
+    backdrop-filter: blur(6px) !important;
+    color: #fff !important;
+    padding: 5px 13px !important;
+    border-radius: 20px !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    z-index: 10 !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+}
+
+/* Puntjes */
+.carousel-dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.modern-slideshow .indicator {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.35) !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    transition: all 0.22s ease !important;
+    display: inline-block !important;
+    min-width: 0 !important;
+    box-shadow: none !important;
+}
+
+.modern-slideshow .indicator.active {
+    background: var(--gold) !important;
+    transform: scale(1.35) !important;
+}
+
+.modern-slideshow .indicator:hover {
+    background: rgba(255, 255, 255, 0.7) !important;
+}
+
+.slideshow-section .slides-caption {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.92rem;
+    color: #888;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Mobiel carrousel */
+@media (max-width: 768px) {
+    .modern-slideshow {
+        aspect-ratio: 4 / 3 !important;
+        border-radius: 12px !important;
+    }
+    .slideshow-prev,
+    .slideshow-next {
+        width: 42px !important;
+        height: 42px !important;
+        font-size: 1.3rem !important;
+    }
+    .slideshow-prev { left: 10px !important; }
+    .slideshow-next { right: 10px !important; }
+}
+
+@media (max-width: 480px) {
+    .modern-slideshow {
+        aspect-ratio: 3 / 2 !important;
+    }
+    .slideshow-prev,
+    .slideshow-next {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 1.1rem !important;
+    }
+}
+
+/* --- Facelift: Verfijnd wit-/luchtruimte --- */
+
+/* Sectie padding verhogen */
+.packages { padding: 7rem 0 !important; }
+.about { padding: 7rem 0 !important; }
+.luxury-repertoire { padding: 7rem 0 !important; }
+.inclusive { padding: 7rem 0 !important; }
+.agenda2 { padding: 7rem 0 !important; }
+.testimonials { padding: 6rem 0 !important; }
+.contact { padding: 7rem 0 !important; }
+.slideshow-section { padding: 6rem 0 !important; }
+
+/* Verbeterde pakket-cards met gouden randgloed */
+.package-card:hover {
+    transform: translateY(-12px) !important;
+    box-shadow:
+        0 22px 55px rgba(60, 24, 16, 0.22),
+        0 0 0 2px rgba(212, 175, 55, 0.3) !important;
+}
+
+.package-popular:hover {
+    transform: scale(1.05) translateY(-10px) !important;
+}
+
+/* Section headers: meer lucht */
+.section-header {
+    margin-bottom: 5rem !important;
+}
+
+/* Hero op kleine schermen */
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 80px !important;
+        min-height: 70vh !important;
+    }
+    .hero-image { display: none; }
+}
+
+/* About-foto: consistente verhouding */
+.about-image img {
+    height: auto !important;
+    max-height: 520px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+/* Inclusive foto fix */
+.inclusive-image-frame img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 500px !important;
+    object-fit: cover !important;
+}
+
+/* WhatsApp knop met label op desktop */
+@media (min-width: 769px) {
+    .whatsapp-float {
+        width: auto !important;
+        padding: 0 1.2rem;
+        border-radius: 30px !important;
+        gap: 0.5rem;
+        font-size: 1rem !important;
+    }
+    .whatsapp-float::after {
+        content: 'WhatsApp';
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #fff;
+    }
+}
+
+/* Scrollbar verfijning (webkit) */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f5f5f5; }
+::-webkit-scrollbar-thumb { background: var(--burgundy); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-dark); }

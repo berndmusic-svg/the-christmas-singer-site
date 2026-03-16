@@ -1,6 +1,6 @@
 # Robots.txt for Dé Kerstzanger - Professional Christmas Entertainment
 # Website: https://dekerstzanger.nl
-# Updated: 2025-01-27
+# Updated: 2026-03-16
 
 User-agent: *
 Allow: /
@@ -34,7 +34,7 @@ Allow: /#repertoire-internationaal
 # Allow SEO landing pages
 Allow: /#kerstzanger-bedrijfsfeest
 Allow: /#christmas-singer-nederland
-Allow: /#kerstentertainment-2025
+Allow: /#kerstentertainment-2026
 
 # Disallow admin/private areas (if any exist in future)
 # Disallow: /admin/

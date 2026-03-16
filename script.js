@@ -409,16 +409,6 @@ class ChristmasSingerWebsite {
         // We rely on native browser lazy-loading. IntersectionObserver logic removed for simplicity & performance.
     }
     
-                });
-            });
-            
-            images.forEach(img => {
-                img.classList.add('lazy');
-                imageObserver.observe(img);
-            });
-        }
-    }
-    
     // Utility Methods
     debounce(func, wait) {
         let timeout;
