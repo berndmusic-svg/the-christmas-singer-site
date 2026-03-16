@@ -295,6 +295,7 @@ p {
     color: var(--cream);
     position: relative;
     width: 100%;
+    isolation: isolate;
 }
 
 .hero-overlay {
