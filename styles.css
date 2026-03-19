@@ -5797,3 +5797,220 @@ html {
                 url('Images/Firefly-20241108230908-png.avif') center center / cover no-repeat !important;
     position: relative !important;
 }
+
+/* ======================================================
+   CHRISTMAS SING-A-LONG SECTION
+   ====================================================== */
+.singalong-section {
+    background: linear-gradient(135deg, #0a1f15 0%, #1B4332 45%, #0d2b1d 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.singalong-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.06) 0%, transparent 55%),
+                      radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.04) 0%, transparent 45%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.singalong-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.singalong-image-col {
+    position: relative;
+    overflow: hidden;
+}
+
+.singalong-img-wrap {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+}
+
+.singalong-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: brightness(0.88);
+    transition: filter 0.4s ease;
+}
+
+.singalong-image-col:hover .singalong-img-wrap img {
+    filter: brightness(1);
+}
+
+.singalong-content-col {
+    padding: 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.4rem;
+}
+
+.singalong-new-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--chocolate);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.35rem 1.1rem;
+    border-radius: 999px;
+    width: fit-content;
+}
+
+.singalong-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+    margin: 0;
+}
+
+.singalong-title-accent {
+    color: var(--gold);
+}
+
+.singalong-tagline {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+}
+
+.singalong-desc {
+    font-size: 0.98rem;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.75;
+    margin: 0;
+}
+
+.singalong-price-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1.5px solid rgba(255, 215, 0, 0.35);
+    border-radius: 12px;
+    padding: 0.9rem 1.4rem;
+    width: fit-content;
+    flex-wrap: wrap;
+}
+
+.singalong-plus {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255, 215, 0, 0.75);
+    font-weight: 600;
+}
+
+.singalong-price {
+    font-family: var(--font-display);
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.singalong-price-note {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.singalong-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.singalong-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.94rem;
+    line-height: 1.55;
+}
+
+.singalong-features li strong {
+    color: var(--white);
+}
+
+.singalong-icon {
+    font-size: 1.15rem;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+    width: 1.4rem;
+    text-align: center;
+}
+
+.singalong-cta {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--chocolate);
+    font-weight: 700;
+    font-size: 0.97rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transition);
+    width: fit-content;
+    letter-spacing: 0.02em;
+    margin-top: 0.4rem;
+}
+
+.singalong-cta:hover {
+    background: var(--white);
+    color: var(--chocolate);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(255, 215, 0, 0.3);
+}
+
+@media (max-width: 900px) {
+    .singalong-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .singalong-image-col {
+        max-height: 380px;
+    }
+
+    .singalong-img-wrap {
+        min-height: 280px;
+    }
+
+    .singalong-content-col {
+        padding: 3rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .singalong-content-col {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .singalong-price {
+        font-size: 1.6rem;
+    }
+}
