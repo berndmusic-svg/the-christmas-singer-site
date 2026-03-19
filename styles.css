@@ -5802,189 +5802,274 @@ html {
    CHRISTMAS SING-A-LONG SECTION
    ====================================================== */
 .singalong-section {
-    background: linear-gradient(135deg, #0a1f15 0%, #1B4332 45%, #0d2b1d 100%);
-    overflow: hidden;
-    position: relative;
+    background: #07100d !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    position: relative !important;
 }
 
+/* Gouden glans-lagen achtergrond */
 .singalong-section::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.06) 0%, transparent 55%),
-                      radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.04) 0%, transparent 45%);
+    background:
+        radial-gradient(ellipse 70% 60% at 75% 50%, rgba(180, 130, 10, 0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 80% at 10% 20%, rgba(27, 67, 50, 0.55) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 90% 85%, rgba(107, 16, 40, 0.3) 0%, transparent 55%);
     pointer-events: none;
     z-index: 0;
+}
+
+/* Subtiele gouden lichtstreep boven de sectie */
+.singalong-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,215,0,0.6) 30%, #FFD700 50%, rgba(255,215,0,0.6) 70%, transparent 100%);
+    z-index: 2;
 }
 
 .singalong-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 600px;
+    min-height: 680px;
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
 }
 
+/* ---- Foto-kolom ---- */
 .singalong-image-col {
     position: relative;
     overflow: hidden;
 }
 
+/* Gouden gloed over de foto-rand */
+.singalong-image-col::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        transparent 70%,
+        rgba(7, 16, 13, 0.85) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
 .singalong-img-wrap {
     width: 100%;
     height: 100%;
-    min-height: 500px;
+    min-height: 580px;
 }
 
 .singalong-img-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center top;
     display: block;
-    filter: brightness(0.88);
-    transition: filter 0.4s ease;
+    filter: brightness(0.82) saturate(1.1);
+    transition: filter 0.5s ease, transform 0.6s ease;
 }
 
 .singalong-image-col:hover .singalong-img-wrap img {
-    filter: brightness(1);
+    filter: brightness(0.95) saturate(1.2);
+    transform: scale(1.03);
 }
 
+/* ---- Content-kolom ---- */
 .singalong-content-col {
-    padding: 5rem 4rem;
+    padding: 5rem 4.5rem 5rem 3.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1.4rem;
+    gap: 1.5rem;
+    background: transparent !important;
 }
 
+/* Nieuw badge */
 .singalong-new-badge {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--chocolate);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: linear-gradient(135deg, #B8860B 0%, #FFD700 50%, #B8860B 100%);
+    color: #07100d;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    padding: 0.35rem 1.1rem;
+    padding: 0.4rem 1.2rem;
     border-radius: 999px;
     width: fit-content;
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.4), 0 2px 8px rgba(0,0,0,0.4);
 }
 
+/* Decoratieve gouden lijn boven de titel */
 .singalong-title {
     font-family: var(--font-display);
-    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    font-size: clamp(2.6rem, 4vw, 3.8rem);
     font-weight: 700;
-    color: var(--white);
-    line-height: 1.1;
+    color: #f5f0ea !important;
+    line-height: 1.05;
     margin: 0;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
 }
 
 .singalong-title-accent {
-    color: var(--gold);
+    color: var(--gold) !important;
+    display: block;
+    text-shadow: 0 0 40px rgba(255,215,0,0.25);
 }
 
 .singalong-tagline {
     font-family: var(--font-display);
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 215, 0, 0.7) !important;
     margin: 0;
+    padding-left: 1rem;
+    border-left: 2px solid rgba(255,215,0,0.35);
 }
 
 .singalong-desc {
-    font-size: 0.98rem;
-    color: rgba(255, 255, 255, 0.82);
-    line-height: 1.75;
+    font-size: 0.96rem;
+    color: rgba(245, 240, 234, 0.78) !important;
+    line-height: 1.8;
     margin: 0;
 }
 
+/* Prijs badge — goud met gloed */
 .singalong-price-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
-    background: rgba(255, 215, 0, 0.1);
-    border: 1.5px solid rgba(255, 215, 0, 0.35);
-    border-radius: 12px;
-    padding: 0.9rem 1.4rem;
+    gap: 1rem;
+    background: linear-gradient(135deg, rgba(184,134,11,0.18) 0%, rgba(255,215,0,0.08) 100%);
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    border-radius: 14px;
+    padding: 1.1rem 1.8rem;
     width: fit-content;
     flex-wrap: wrap;
+    box-shadow: 0 0 30px rgba(255,215,0,0.08), inset 0 1px 0 rgba(255,255,255,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.singalong-price-badge::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,215,0,0.5), transparent);
 }
 
 .singalong-plus {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: rgba(255, 215, 0, 0.75);
-    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: rgba(255, 215, 0, 0.65) !important;
+    font-weight: 700;
 }
 
 .singalong-price {
     font-family: var(--font-display);
-    font-size: 2.1rem;
+    font-size: 2.6rem;
     font-weight: 700;
-    color: var(--gold);
+    color: var(--gold) !important;
     line-height: 1;
+    text-shadow: 0 0 20px rgba(255,215,0,0.3);
 }
 
 .singalong-price-note {
-    font-size: 0.82rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    color: rgba(245, 240, 234, 0.45) !important;
 }
 
+/* Feature lijst */
 .singalong-features {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: 0;
+    border: 1px solid rgba(255,215,0,0.12);
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.025);
 }
 
 .singalong-features li {
     display: flex;
     align-items: flex-start;
-    gap: 0.8rem;
-    color: rgba(255, 255, 255, 0.82);
-    font-size: 0.94rem;
+    gap: 0.9rem;
+    color: rgba(245, 240, 234, 0.82) !important;
+    font-size: 0.93rem;
     line-height: 1.55;
+    padding: 0.85rem 1.2rem;
+    border-bottom: 1px solid rgba(255,215,0,0.08);
+    transition: background 0.2s ease;
+}
+
+.singalong-features li:last-child {
+    border-bottom: none;
+}
+
+.singalong-features li:hover {
+    background: rgba(255,215,0,0.04);
 }
 
 .singalong-features li strong {
-    color: var(--white);
+    color: #f5f0ea !important;
 }
 
 .singalong-icon {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     flex-shrink: 0;
-    margin-top: 0.05rem;
-    width: 1.4rem;
+    margin-top: 0.1rem;
+    width: 1.5rem;
     text-align: center;
+    filter: drop-shadow(0 0 4px rgba(255,215,0,0.4));
 }
 
+/* CTA knop */
 .singalong-cta {
     display: inline-block;
-    background: var(--gold);
-    color: var(--chocolate);
-    font-weight: 700;
-    font-size: 0.97rem;
-    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #B8860B 0%, #FFD700 50%, #B8860B 100%) !important;
+    background-size: 200% auto !important;
+    color: #07100d !important;
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: 1.1rem 2.2rem;
     border-radius: 8px;
     text-decoration: none;
     text-align: center;
-    transition: var(--transition);
+    transition: background-position 0.4s ease, transform 0.25s ease, box-shadow 0.25s ease;
     width: fit-content;
-    letter-spacing: 0.02em;
-    margin-top: 0.4rem;
+    letter-spacing: 0.04em;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 20px rgba(255,215,0,0.3), 0 2px 8px rgba(0,0,0,0.4);
+    text-transform: uppercase;
 }
 
 .singalong-cta:hover {
-    background: var(--white);
-    color: var(--chocolate);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(255, 215, 0, 0.3);
+    background-position: right center !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(255,215,0,0.45), 0 4px 12px rgba(0,0,0,0.4);
+    color: #07100d !important;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+    .singalong-content-col {
+        padding: 4rem 3rem;
+    }
 }
 
 @media (max-width: 900px) {
@@ -5993,24 +6078,36 @@ html {
     }
 
     .singalong-image-col {
-        max-height: 380px;
+        max-height: 420px;
+    }
+
+    .singalong-image-col::after {
+        background: linear-gradient(
+            to bottom,
+            transparent 60%,
+            rgba(7, 16, 13, 0.9) 100%
+        );
     }
 
     .singalong-img-wrap {
-        min-height: 280px;
+        min-height: 320px;
     }
 
     .singalong-content-col {
-        padding: 3rem 1.5rem;
+        padding: 3rem 2rem 4rem;
     }
 }
 
 @media (max-width: 480px) {
     .singalong-content-col {
-        padding: 2.5rem 1.25rem;
+        padding: 2.5rem 1.25rem 3rem;
     }
 
     .singalong-price {
-        font-size: 1.6rem;
+        font-size: 2rem !important;
+    }
+
+    .singalong-title {
+        font-size: 2.2rem !important;
     }
 }
