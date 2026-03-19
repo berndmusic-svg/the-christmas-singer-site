@@ -5803,9 +5803,12 @@ html {
    ====================================================== */
 .singalong-section {
     background: #07100d !important;
+    background-color: #07100d !important;
     padding: 0 !important;
     overflow: hidden !important;
     position: relative !important;
+    display: block !important;
+    color: #f5f0ea !important;
 }
 
 /* Gouden glans-lagen achtergrond */
