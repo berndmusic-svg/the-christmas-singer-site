@@ -1589,29 +1589,42 @@ section:nth-child(even) {
 
 .inclusive-hero-image {
     position: relative;
+    overflow: hidden;
 }
 
 .inclusive-image-frame {
     position: relative;
-    border-radius: 20px;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    border-radius: 0;
+    box-shadow: none;
+    height: 520px;
 }
 
 .inclusive-image-frame img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    max-height: 500px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: brightness(0.85) saturate(1.05);
+    transition: filter 0.5s ease, transform 0.6s ease;
+}
+
+.inclusive-image-frame:hover img {
+    filter: brightness(0.97) saturate(1.15);
+    transform: scale(1.03);
 }
 
 .inclusive-image-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(139, 21, 56, 0.1), rgba(212, 175, 55, 0.1));
+    inset: 0;
+    background: linear-gradient(
+        to left,
+        transparent 60%,
+        #110a0d 100%
+    );
+    z-index: 1;
+    pointer-events: none;
 }
 
 /* Agenda Section - V2 - Enhanced Visuals */
@@ -4410,9 +4423,10 @@ html {
 
 /* Image */
 .about-v2-image {
-    border-radius: 12px;
+    border-radius: 0;
     overflow: hidden;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: none;
+    border-right: 1px solid rgba(212, 175, 55, 0.25);
     line-height: 0;
     position: sticky;
     top: 100px;
@@ -4424,10 +4438,28 @@ html {
     object-fit: cover;
     object-position: top center;
     display: block;
-    filter: brightness(0.88) saturate(0.8);
+    filter: brightness(0.85) saturate(1.05);
+    transition: filter 0.5s ease, transform 0.6s ease;
 }
 
-/* Header */
+.about-v2-image:hover img {
+    filter: brightness(0.97) saturate(1.15);
+    transform: scale(1.03);
+}
+
+.about-v2-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        transparent 60%,
+        #0d0810 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
 .about-v2-header {
     margin-bottom: 2.5rem;
 }
@@ -4623,9 +4655,10 @@ html {
 }
 
 .about-v2-image {
-    border-radius: 12px;
+    border-radius: 0;
     overflow: hidden;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: none;
+    border-right: 1px solid rgba(212, 175, 55, 0.25);
     line-height: 0;
     position: sticky;
     top: 100px;
@@ -4637,7 +4670,8 @@ html {
     object-fit: cover;
     object-position: top center;
     display: block;
-    filter: brightness(0.88) saturate(0.8);
+    filter: brightness(0.85) saturate(1.05);
+    transition: filter 0.5s ease, transform 0.6s ease;
 }
 
 .about-v2-header {
@@ -4822,10 +4856,6 @@ html {
     position: relative !important;
 }
 
-.luxury-repertoire::before {
-    content: none !important;
-}
-
 /* Header */
 .rep-v2-header {
     text-align: center;
@@ -4871,12 +4901,26 @@ html {
 }
 
 .rep-v2-image {
-    border-radius: 12px;
+    border-radius: 0;
     overflow: hidden;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: none;
+    border-right: 1px solid rgba(212, 175, 55, 0.25);
     line-height: 0;
     position: sticky;
     top: 100px;
+}
+
+.rep-v2-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        transparent 60%,
+        #110a0d 100%
+    );
+    pointer-events: none;
+    z-index: 1;
 }
 
 .rep-v2-image img {
@@ -4885,7 +4929,13 @@ html {
     object-fit: cover;
     object-position: top center;
     display: block;
-    filter: brightness(0.85) saturate(0.8);
+    filter: brightness(0.85) saturate(1.05);
+    transition: filter 0.5s ease, transform 0.6s ease;
+}
+
+.rep-v2-image:hover img {
+    filter: brightness(0.97) saturate(1.15);
+    transform: scale(1.03);
 }
 
 /* Song columns */
