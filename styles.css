@@ -3715,7 +3715,7 @@ html {
 .about { padding: 7rem 0 !important; }
 .luxury-repertoire { padding: 7rem 0 !important; }
 .inclusive { padding: 7rem 0 !important; }
-.agenda2 { padding: 7rem 0 !important; }
+.agenda2 { padding: 7rem 0 3rem !important; }
 .testimonials { padding: 6rem 0 !important; }
 .contact { padding: 7rem 0 !important; }
 .slideshow-section { padding: 6rem 0 !important; }
@@ -5397,7 +5397,7 @@ html {
 
 .testi-v2-section {
     background: #0e0610 !important;
-    padding: 7rem 0 !important;
+    padding: 3rem 0 7rem !important;
 }
 
 .testi-v2-header {
