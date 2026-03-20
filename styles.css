@@ -6436,3 +6436,36 @@ html {
         font-size: 2.2rem;
     }
 }
+
+/* ======================================================
+   GOUDEN HORIZONTALE LIJN — alle secties
+   ====================================================== */
+.vid-v2-section,
+.about,
+.luxury-repertoire,
+.pkg-v2-section,
+.inclusive,
+.agenda2,
+.testi-v2-section,
+.slideshow-section,
+.contact {
+    position: relative !important;
+}
+
+.vid-v2-section::before,
+.about::before,
+.luxury-repertoire::before,
+.pkg-v2-section::before,
+.inclusive::before,
+.agenda2::before,
+.testi-v2-section::before,
+.slideshow-section::before,
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.55) 35%, rgba(212,175,55,0.8) 50%, rgba(212,175,55,0.55) 65%, transparent 100%);
+    z-index: 10;
+    pointer-events: none;
+}
