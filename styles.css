@@ -3843,22 +3843,32 @@ html {
 /* Hide the old cards entirely when new markup is used */
 .avail-v2-card {
     border-radius: 16px;
-    border: 1px solid rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.35);
     padding: 2.5rem 2rem;
     background: rgba(255, 255, 255, 0.03);
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
-    box-shadow: none;
+    transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 20px rgba(212,175,55,0.06);
     text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.avail-v2-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent);
 }
 
 .avail-v2-card:hover {
-    border-color: rgba(212, 175, 55, 0.45);
+    border-color: rgba(212, 175, 55, 0.65);
     background: rgba(212, 175, 55, 0.05);
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    box-shadow: 0 0 36px rgba(212,175,55,0.15), 0 12px 40px rgba(0,0,0,0.35);
 }
 
 .avail-v2-month {
@@ -4883,14 +4893,15 @@ html {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
-    border: 1px solid rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.35);
     border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 0 32px rgba(212,175,55,0.08);
 }
 
 .rep-v2-col {
     padding: 2rem 1.75rem 2.5rem;
-    border-right: 1px solid rgba(212, 175, 55, 0.12);
+    border-right: 1px solid rgba(212, 175, 55, 0.25);
     transition: background 0.3s ease;
 }
 
@@ -5131,22 +5142,38 @@ html {
 }
 
 .pkg-v2-card {
-    border: 1px solid rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.35);
     border-radius: 4px;
     background: #15101a;
-    transition: border-color 0.25s ease;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.pkg-v2-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent);
 }
 
 .pkg-v2-card:hover {
-    border-color: rgba(212, 175, 55, 0.4);
+    border-color: rgba(212, 175, 55, 0.65);
+    box-shadow: 0 0 28px rgba(212,175,55,0.12), 0 8px 32px rgba(0,0,0,0.35);
 }
 
 .pkg-v2-card--featured {
-    border-color: rgba(212, 175, 55, 0.5);
+    border-color: rgba(212, 175, 55, 0.7);
     background: #1a1220;
     position: relative;
+    box-shadow: 0 0 40px rgba(212,175,55,0.15), 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.pkg-v2-card--featured::before {
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.85), transparent);
 }
 
 .pkg-v2-card-inner {
@@ -5334,8 +5361,8 @@ html {
 
 .christmas-checklist {
     background: rgba(255, 255, 255, 0.04) !important;
-    border-color: rgba(212, 175, 55, 0.2) !important;
-    box-shadow: none !important;
+    border-color: rgba(212, 175, 55, 0.38) !important;
+    box-shadow: 0 0 24px rgba(212,175,55,0.08) !important;
 }
 
 .incl-check {
@@ -5414,17 +5441,28 @@ html {
 
 .testi-v2-card {
     background: #15101a;
-    border: 1px solid rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.35);
     border-radius: 4px;
     padding: 2.2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    transition: border-color 0.25s ease;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.testi-v2-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent);
 }
 
 .testi-v2-card:hover {
-    border-color: rgba(212, 175, 55, 0.4);
+    border-color: rgba(212, 175, 55, 0.65);
+    box-shadow: 0 0 28px rgba(212,175,55,0.12), 0 8px 32px rgba(0,0,0,0.35);
 }
 
 .testi-v2-logo {
@@ -5685,15 +5723,9 @@ html {
 .pkg-v2-subtitle { color: rgba(245, 240, 234, 0.55) !important; }
 
 /* Kaarten: iets lichter dan de sectie voor dieptewerking */
-.pkg-v2-card {
-    background: #1e0c11 !important;
-    border-color: rgba(212, 175, 55, 0.15) !important;
-}
-.pkg-v2-card--featured {
-    background: #271018 !important;
-    border-color: rgba(212, 175, 55, 0.5) !important;
-}
-.pkg-v2-card:hover            { border-color: rgba(212, 175, 55, 0.4) !important; }
+.pkg-v2-card {background: #1e0c11 !important; border-color: rgba(212, 175, 55, 0.35) !important;}
+.pkg-v2-card--featured {background: #271018 !important; border-color: rgba(212, 175, 55, 0.65) !important;}
+.pkg-v2-card:hover            { border-color: rgba(212, 175, 55, 0.7) !important; }
 .pkg-v2-duration              { color: rgba(245, 240, 234, 0.38) !important; }
 .pkg-v2-name                  { color: #f5f0ea !important; }
 .pkg-v2-price                 { border-color: rgba(212, 175, 55, 0.15) !important; }
@@ -5717,8 +5749,8 @@ html {
 .availability-subtitle          { color: rgba(245, 240, 234, 0.55) !important; }
 
 /* Kaarten: iets lichter groen voor dieptewerking */
-.avail-v2-card       { background: #0d1f10 !important; border-color: rgba(212, 175, 55, 0.15) !important; }
-.avail-v2-card:hover { border-color: rgba(212, 175, 55, 0.45) !important; }
+.avail-v2-card       { background: #0d1f10 !important; border-color: rgba(212, 175, 55, 0.35) !important; }
+.avail-v2-card:hover { border-color: rgba(212, 175, 55, 0.65) !important; }
 .avail-v2-month      { color: #f5f0ea !important; }
 .avail-v2-year       { color: rgba(245, 240, 234, 0.38) !important; }
 .avail-v2-desc       { color: rgba(245, 240, 234, 0.65) !important; }
